@@ -25,8 +25,8 @@ GPIO.output(room1_led,False)
 GPIO.output(room2_led,False)
 
 def play_sound(voice_str):
-    client_id = "J4nyQYb8vkIhoLySTQEj"
-    client_secret = "7LvKayq7sk"
+    client_id = "your_id"
+    client_secret = "yours"
     encText = urllib.parse.quote(voice_str)
     data = "speaker=mijin&speed=0&text=" + encText;
     url = "https://openapi.naver.com/v1/voice/tts.bin"
@@ -51,7 +51,7 @@ def sound_play():
     
 def weather_sound():
     map_name='kunsan'
-    data=urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q='+map_name+'&APPID=98ab6e8daf80d505055cc70aea776564')
+    data=urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q='+map_name+'&APPID=yourID')
     m=data.read()
     DB=json.loads(m.decode('utf-8'))
     climate=DB['weather']
